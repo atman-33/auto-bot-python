@@ -1,0 +1,6 @@
+[submodule "common_python"]
+	path = common_python
+	url = git@github.com:Grawor/common_python.git
+[submodule "fcoin-python-sdk"]
+	path = fcoin-python-sdk
+	url = git@github.com:Grawor/fcoin-python-sdk.git
