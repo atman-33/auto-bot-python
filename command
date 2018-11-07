@@ -1,3 +1,17 @@
+------ 手順関連 ------
+
+// モジュールをインストール（追加）した場合
+①requirements.txt ファイルを更新
+②Pipfile と Pipfile.lock ファイルを削除
+③pipenv install を実施
+
+// プログラムファイル更新時 Heroku へのデプロイ
+①git コミット
+②Heroku へプッシュ
+③環境変数設定？
+
+------ コマンド関連 ------
+
 // pythonファイルの実行
 python3 line_bitcoin.py    // 【注意】pythonで実行だとpython2のシステムパスを参照するためモジュールが見つからないエラーとなる。
 
