@@ -8,7 +8,6 @@
 // プログラムファイル更新時 Heroku へのデプロイ
 ①git コミット
 ②Heroku へプッシュ
-③環境変数設定？
 
 ------ コマンド関連 ------
 
@@ -25,8 +24,11 @@ git push origin master
 // Heroku へプッシュ（デプロイ）
 git push heroku master
 
-// Heroku に環境変数を設定
+// Heroku に環境変数を設定　※一度設定されれば、再度デプロイしても残っている
 heroku config:set 環境変数名称1=設定したいkey1 環境変数名称2=設定したいkey2 
+
+// Heroku の環境変数を確認
+heroku config:get 環境変数
 
 // Heroku で python ファイルを起動
 heroku run python line_bitcoin.py

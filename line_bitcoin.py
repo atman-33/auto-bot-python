@@ -21,7 +21,7 @@ from common import Common
 
 common = Common()
 #token = common.get_csv_val_by_key(file_name, "line_token")
-common.set_line_token("LINE_TOKEN")
+common.set_line_token(os.environ["LINE_TOKEN"])
 
 
 # In[55]:
