@@ -1,6 +1,6 @@
 ------ 手順関連 ------
 
-// モジュールをインストール（追加）した場合
+// モジュールをインストール（追加）したことをHerokuへ反映させる場合
 ①requirements.txt ファイルを更新
 ②Pipfile と Pipfile.lock ファイルを削除
 ③pipenv install を実施
@@ -13,6 +13,9 @@
 
 // pythonファイルの実行
 python3 line_bitcoin.py    // 【注意】pythonで実行だとpython2のシステムパスを参照するためモジュールが見つからないエラーとなる。
+
+// 登録しているgitの確認
+git remote -v
 
 // git コミット
 git add .
