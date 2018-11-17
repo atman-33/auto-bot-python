@@ -26,10 +26,14 @@ git push origin master
 
 // git のリモートurlを変更
 git remote set-url origin {new url}
-git remote set-url origin https://github.com/Grawor/auto_bot.git
+git remote set-url origin git@github.com:Grawor/auto_bot.git
 
 // git リモートにpush時に! [rejected] master -> master (fetch first)エラーの場合
-git merge --allow-unrelated-histories origin/master
+git fetch
+git merge origin/master
+git push origin master
+※NG:git merge --allow-unrelated-histories origin/master
+
 
 // Heroku へプッシュ（デプロイ）
 git push heroku master
@@ -68,3 +72,16 @@ sudo cp /usr/local/bin/pip /usr/bin/
 // requirements.txt, pipfileの作成
 pip freeze > requirements.txt
 pipenv install
+
+// anaconda のインストール
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+pyenv install anaconda3-4.0.0
+pyenv rehash
+pyenv global anaconda3-4.0.0
+
+// jupyter notebook を起動
+jupyter notebook --ip 0.0.0.0 --port 8080 --no-browser

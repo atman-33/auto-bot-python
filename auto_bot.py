@@ -21,7 +21,8 @@ from common import Common
 
 common = Common()
 #token = common.get_csv_val_by_key(file_name, "line_token")
-common.set_line_token(os.environ["LINE_TOKEN"])
+common.set_line("9Cbs15MIrtk5phaHO9SzrrFQQ0XS85BiPmuWpWakibu")
+#common.set_line(os.environ["LINE_TOKEN"])
 
 
 # In[55]:
@@ -32,7 +33,7 @@ fcoin = Fcoin()
 data = pd.DataFrame(fcoin.get_market_ticker("btcusdt"))
 latest_price = data.at["ticker","data"][0]
 print(latest_price)
-common.line_notify("BTC/USDT 最新価格： " + str(latest_price)) 
+common.send_message("BTC/USDT 最新価格： " + str(latest_price)) 
 
 #print(fcoin.get_symbols())
 
