@@ -1,2 +1,2 @@
-# cloud9
-Cloud9 用のレポジトリ
+# auto_bot
+Cloud9 →　Herokuを通じて自動通知を行うプログラム
