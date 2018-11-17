@@ -21,7 +21,7 @@ git remote -v
 git add .
 git commit -m "commit"
 
-// git レポジトリ（リモート）へプッシュ
+// git リポジトリ（リモート）へプッシュ origin:このリポジトリ maste:リモートリポジトリ
 git push origin master
 
 // Heroku へプッシュ（デプロイ）
@@ -36,13 +36,16 @@ heroku config:get 環境変数
 // Heroku で python ファイルを起動
 heroku run python line_bitcoin.py
 
-// git サブモジュール追加方法
+// git サブモジュール追加方法（初めて作成する場合）
 git submodule add git://github.com/Grawor/common_python.git common_python
 git submodule add git://github.com/Grawor/fcoin-pythsudon-sdk.git fcoin-python-sdk
 
 // git サブモジュール追加方法（一度サブモジュールを作成してしまっていた場合）
 git submodule add --force git://github.com/Grawor/common_python.git common_python
 git submodule add --force git://github.com/Grawor/fcoin-python-sdk.git fcoin-python-sdk
+
+// git サブモジュール更新
+git submodule foreach git pull origin master
 
 // ヴァージョン確認
 python -m pip list
