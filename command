@@ -24,6 +24,9 @@ git commit -m "commit"
 // git リポジトリ（リモート）へプッシュ origin:このリポジトリ maste:リモートリポジトリ
 git push origin master
 
+// git のリモートurlを変更
+git remote set-url origin {new url}
+
 // Heroku へプッシュ（デプロイ）
 git push heroku master
 
