@@ -26,6 +26,10 @@ git push origin master
 
 // git のリモートurlを変更
 git remote set-url origin {new url}
+git remote set-url origin https://github.com/Grawor/auto_bot.git
+
+// git リモートにpush時に! [rejected] master -> master (fetch first)エラーの場合
+git merge --allow-unrelated-histories origin/master
 
 // Heroku へプッシュ（デプロイ）
 git push heroku master
