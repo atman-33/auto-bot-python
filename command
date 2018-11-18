@@ -1,13 +1,13 @@
 ------ 手順関連 ------
 
 // モジュールをインストール（追加）したことをHerokuへ反映させる場合
-①requirements.txt ファイルを更新
-②Pipfile と Pipfile.lock ファイルを削除
-③pipenv install を実施
+１．requirements.txt と Pipfile と Pipfile.lock ファイルを削除
+２．requirements.txt ファイルを更新
+３．pipenv install を実施
 
 // プログラムファイル更新時 Heroku へのデプロイ
-①git コミット
-②Heroku へプッシュ
+１．git コミット
+２．Heroku へプッシュ
 
 ------ コマンド関連 ------
 
@@ -18,10 +18,15 @@ python3 line_bitcoin.py    // 【注意】pythonで実行だとpython2のシス�
 git remote -v
 
 // git コミット
+git init    // ←初めてgitをでコミットする際のみ使う
 git add .
 git commit -m "commit"
 
-// git リポジトリ（リモート）へプッシュ origin:このリポジトリ maste:リモートリポジトリ
+// git のリモート登録＜git remote add [shortname] [url]＞
+git remote add origin git@github.com:Grawor/auto_bot.git
+
+// git リポジトリ（リモート）へプッシュ 
+// 【origin:登録したリモートリポジトリのショートネーム master:このリポジトリ】
 git push origin master
 
 // git のリモートurlを変更
@@ -45,7 +50,7 @@ heroku config:set 環境変数名称1=設定したいkey1 環境変数名称2=�
 heroku config:get 環境変数
 
 // Heroku で python ファイルを起動
-heroku run python line_bitcoin.py
+heroku run python auto_bot.py
 
 // git サブモジュール追加方法（初めて作成する場合）
 git submodule add git://github.com/Grawor/common_python.git common_python
