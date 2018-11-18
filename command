@@ -1,15 +1,44 @@
------- 手順関連 ------
+---- ---- 手順関連 ---- ----
 
-// モジュールをインストール（追加）したことをHerokuへ反映させる場合
-１．requirements.txt と Pipfile と Pipfile.lock ファイルを削除
-２．requirements.txt ファイルを更新
-３．pipenv install を実施
+---- 初めてgitでコミットする場合 ----
+git init
 
-// プログラムファイル更新時 Heroku へのデプロイ
-１．git コミット
-２．Heroku へプッシュ
+※GithubのCloud9用SSHキー登録が未実施であれば登録する。
 
------- コマンド関連 ------
+
+---- リモートGitを登録する場合 ----
+1. 登録されているリモートGitを確認）
+git remote -v
+
+2. git のリモート登録＜git remote add [shortname] [url]＞
+git remote add origin git@github.com:Grawor/auto_bot.git
+
+
+---- 更新したファイル類をリモートGitにアップデートする場合 ----
+git add .
+git commit -m "commit"
+git push origin master
+
+※Git push でエラーが発生時は強制マージを試してみる。
+
+
+---- モジュールをインストール（追加）したことをHerokuへ反映させる場合 ----
+1. requirements.txt と Pipfile と Pipfile.lock ファイルを削除
+2. requirements.txt ファイルを更新
+pip freeze > requirements.txt
+3. pipenv install を実施
+pipenv install
+
+
+---- プログラムファイル更新時 Heroku へのデプロイ ----
+1. git コミット
+git add .
+git commit -m "commit"
+2. Heroku へプッシュ
+git push heroku master
+
+
+---- ---- コマンドのメモ ---- ----
 
 // pythonファイルの実行
 python3 line_bitcoin.py    // 【注意】pythonで実行だとpython2のシステムパスを参照するためモジュールが見つからないエラーとなる。
